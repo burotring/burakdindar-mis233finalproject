@@ -38,6 +38,10 @@ npm run server
 
 Open Grafana at `http://localhost:3000`.
 
+Authentication:
+- Anonymous access is enabled by default in this project’s Docker setup.
+- If you are prompted to log in, try `admin` / `admin`.
+
 ## Using the panel
 
 1. Create or open a Grafana dashboard.
@@ -66,6 +70,8 @@ Then use URLs like:
 - `http://localhost:8080/server-cpu.csv`
 - `http://localhost:8080/temperature.json`
 - `http://localhost:8080/zscore-anomaly-3.sql`
+
+For a complete list of included sample URLs, see `DATA_URLS.md`.
 
 If you see a CORS error in the browser, use a server that includes the header `Access-Control-Allow-Origin: *`.
 
@@ -103,6 +109,16 @@ INSERT INTO metrics VALUES (1733760300000, 47.8);
 - `npm run lint`: run ESLint
 - `npm run typecheck`: TypeScript typecheck
 - `npm run e2e`: Playwright E2E tests
+
+## Publishing and signing
+
+Grafana requires plugins to be signed for production environments. For development/testing, this project runs Grafana with unsigned plugin loading enabled.
+
+To sign the plugin (requires Grafana plugin signing setup):
+
+```bash
+npm run sign
+```
 
 ## Repository structure
 
