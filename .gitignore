@@ -1,0 +1,28 @@
+# dependencies
+node_modules/
+
+# build output
+/dist/
+
+# env / local
+.env
+.env.*
+
+# OS
+.DS_Store
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Playwright
+playwright-report/
+playwright/.cache/
+
+# coverage
+coverage/
+
+# IDE
+.vscode/
+.idea/

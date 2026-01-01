@@ -1,0 +1,23 @@
+[
+  {"timestamp": 1733760000000, "value": 75.2},
+  {"timestamp": 1733763600000, "value": 78.5},
+  {"timestamp": 1733767200000, "value": 76.8},
+  {"timestamp": 1733770800000, "value": 220.0},
+  {"timestamp": 1733774400000, "value": 77.3},
+  {"timestamp": 1733778000000, "value": 79.1},
+  {"timestamp": 1733781600000, "value": 75.9},
+  {"timestamp": 1733785200000, "value": 78.4},
+  {"timestamp": 1733788800000, "value": 240.0},
+  {"timestamp": 1733792400000, "value": 76.7},
+  {"timestamp": 1733796000000, "value": 77.8},
+  {"timestamp": 1733799600000, "value": 75.3},
+  {"timestamp": 1733803200000, "value": 78.9},
+  {"timestamp": 1733806800000, "value": 15.0},
+  {"timestamp": 1733810400000, "value": 76.5},
+  {"timestamp": 1733814000000, "value": 77.2},
+  {"timestamp": 1733817600000, "value": 78.7},
+  {"timestamp": 1733821200000, "value": 250.0},
+  {"timestamp": 1733824800000, "value": 76.9},
+  {"timestamp": 1733828400000, "value": 77.5}
+]
+

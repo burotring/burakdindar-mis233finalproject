@@ -1,0 +1,24 @@
+-- Database Query Response Times
+-- Timestamp and response time in milliseconds
+
+CREATE TABLE IF NOT EXISTS query_metrics (
+    timestamp BIGINT,
+    response_time FLOAT
+);
+
+INSERT INTO query_metrics VALUES (1733760000000, 45.2);
+INSERT INTO query_metrics VALUES (1733760300000, 52.8);
+INSERT INTO query_metrics VALUES (1733760600000, 48.5);
+INSERT INTO query_metrics VALUES (1733760900000, 51.3);
+INSERT INTO query_metrics VALUES (1733761200000, 49.7);
+INSERT INTO query_metrics VALUES (1733761500000, 54.1);
+INSERT INTO query_metrics VALUES (1733761800000, 56.8);
+INSERT INTO query_metrics VALUES (1733762100000, 53.2);
+INSERT INTO query_metrics VALUES (1733762400000, 58.9);
+INSERT INTO query_metrics VALUES (1733762700000, 62.5);
+INSERT INTO query_metrics VALUES (1733763000000, 145.8);
+INSERT INTO query_metrics VALUES (1733763300000, 68.3);
+INSERT INTO query_metrics VALUES (1733763600000, 65.7);
+INSERT INTO query_metrics VALUES (1733764200000, 71.2);
+INSERT INTO query_metrics VALUES (1733764500000, 69.8);
+
