@@ -58,6 +58,8 @@ Authentication:
 
 The panel can fetch external data (CSV, JSON, SQL) from a URL.
 
+This repository also includes a Docker Compose service that serves the `examples/` folder on `http://localhost:8080`.
+
 ### Start a local file server (examples)
 
 ```bash

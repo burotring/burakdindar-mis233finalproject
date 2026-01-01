@@ -3,3 +3,12 @@ services:
     extends:
       file: .config/docker-compose-base.yaml
       service: grafana
+
+  # Serves the ./examples folder on http://localhost:8080 with CORS enabled
+  data-server:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - ./examples:/usr/share/nginx/html:ro
+      - ./nginx-data-server.conf:/etc/nginx/conf.d/default.conf:ro
