@@ -103,15 +103,6 @@ const getStyles = (options: SimpleOptions) => {
       color: white;
       position: relative;
     `,
-    studentName: css`
-      font-size: ${options.fontSize * 1.1}px;
-      font-weight: 600;
-      margin-bottom: 4px;
-    `,
-    studentId: css`
-      font-size: ${options.fontSize * 0.9}px;
-      opacity: 0.9;
-    `,
     content: css`
       display: flex;
       flex-direction: column;
@@ -424,16 +415,7 @@ export const SimplePanel: React.FC<Props> = ({ options, data, width, height, fie
           </div>
           <div className={styles.subtitle}>MIS233 • AI insights • anomaly detection • forecasting</div>
         </div>
-        <div className={styles.studentInfo}>
-          <div className={styles.studentName}>
-            Developed by: {options.studentName}
-          </div>
-          {options.studentId && (
-            <div className={styles.studentId}>
-              ID: {options.studentId}
-            </div>
-          )}
-        </div>
+        <div className={styles.studentInfo} />
       </div>
 
       {/* Data Loading/Error State */}

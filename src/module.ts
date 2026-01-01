@@ -4,22 +4,6 @@ import { SimplePanel } from './components/SimplePanel';
 
 export const plugin = new PanelPlugin<SimpleOptions>(SimplePanel).setPanelOptions((builder) => {
   return builder
-    // ===== MANDATORY: STUDENT INFORMATION =====
-    .addTextInput({
-      path: 'studentName',
-      name: 'Student Name',
-      description: 'Your full name (MANDATORY - Required to pass)',
-      defaultValue: 'Burak Dindar',
-      category: ['Student Info'],
-    })
-    .addTextInput({
-      path: 'studentId',
-      name: 'Student ID',
-      description: 'Your student ID number',
-      defaultValue: '2022502126',
-      category: ['Student Info'],
-    })
-
     // ===== VISUALIZATION MODE =====
     .addRadio({
       path: 'visualizationMode',

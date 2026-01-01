@@ -8,7 +8,6 @@ This repository is a course project for **BOUN MIS233**.
 
 - **Plugin ID**: `boun-233hw-panel`
 - **Plugin name**: `233hw`
-- **Student**: Burak Dindar (2022502126)
 
 ## Features
 

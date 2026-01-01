@@ -9,10 +9,6 @@ export interface SimpleOptions {
   showSeriesCount: boolean;
   seriesCountSize: SeriesSize;
   
-  // Student Info (Mandatory)
-  studentName: string;
-  studentId: string;
-  
   // Visualization Options
   visualizationMode: VisualizationMode;
   chartType: ChartType;
