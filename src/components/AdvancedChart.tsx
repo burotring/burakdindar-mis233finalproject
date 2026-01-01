@@ -16,6 +16,35 @@ import {
 import { DataPoint, ChartType, TrendPrediction } from '../types';
 import { css } from '@emotion/css';
 
+function getPointCountAndLastValue(values: any[]): { count: number; last?: number } {
+  let count = 0;
+  let last: number | undefined;
+
+  for (const v of values ?? []) {
+    if (v == null) {
+      continue;
+    }
+
+    if (typeof v === 'number') {
+      if (Number.isFinite(v)) {
+        count += 1;
+        last = v;
+      }
+      continue;
+    }
+
+    if (typeof v === 'object') {
+      const y = (v as any).y;
+      if (typeof y === 'number' && Number.isFinite(y)) {
+        count += 1;
+        last = y;
+      }
+    }
+  }
+
+  return { count, last };
+}
+
 // Register ChartJS components
 ChartJS.register(
   CategoryScale,
@@ -261,6 +290,36 @@ export const AdvancedChart: React.FC<Props> = ({
             boxWidth: 10,
             boxHeight: 10,
             padding: 14,
+            generateLabels: (chart: any) => {
+              const defaultGenerator =
+                ChartJS.defaults?.plugins?.legend?.labels?.generateLabels;
+              const base =
+                typeof defaultGenerator === 'function'
+                  ? defaultGenerator(chart)
+                  : chart.legend?.legendItems ?? [];
+
+              return (base ?? []).map((item: any) => {
+                const ds = chart?.data?.datasets?.[item.datasetIndex] ?? {};
+                const { count, last } = getPointCountAndLastValue(ds.data ?? []);
+
+                let suffix = '';
+                const label = String(ds.label ?? item.text ?? '');
+                if (label === 'Actual Data') {
+                  suffix = ` • n=${count}${typeof last === 'number' ? ` • last=${last.toFixed(2)}` : ''}`;
+                } else if (label === 'Anomalies') {
+                  suffix = ` • n=${count}`;
+                } else if (label === 'AI Predictions') {
+                  suffix = ` • steps=${count}${typeof last === 'number' ? ` • last=${last.toFixed(2)}` : ''}`;
+                }
+
+                return {
+                  ...item,
+                  text: `${label}${suffix}`,
+                  // Respect dataset pointStyle if present
+                  pointStyle: ds.pointStyle ?? item.pointStyle,
+                };
+              });
+            },
           },
         },
         tooltip: {
