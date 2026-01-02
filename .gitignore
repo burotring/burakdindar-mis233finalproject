@@ -26,3 +26,6 @@ coverage/
 # IDE
 .vscode/
 .idea/
+
+# tooling cache
+.eslintcache

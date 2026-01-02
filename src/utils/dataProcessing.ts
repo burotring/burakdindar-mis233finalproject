@@ -156,7 +156,7 @@ export function normalizeData(values: number[]): number[] {
   return values.map((v) => (v - min) / range);
 }
 
-export function smoothData(values: number[], windowSize: number = 3): number[] {
+export function smoothData(values: number[], windowSize = 3): number[] {
   if (values.length < windowSize) {
     return values;
   }

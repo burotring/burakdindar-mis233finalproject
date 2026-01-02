@@ -9,7 +9,7 @@ import { AnomalyResult, TrendPrediction, AIInsight } from '../types';
 // Z-Score based anomaly detection
 export function detectAnomaliesZScore(
   data: number[],
-  sensitivity: number = 3  // Increased from 2 to 3 for better accuracy
+  sensitivity = 3 // Increased from 2 to 3 for better accuracy
 ): AnomalyResult[] {
   if (data.length < 3) {
     return [];
@@ -41,7 +41,7 @@ export function detectAnomaliesZScore(
 // IQR (Interquartile Range) based anomaly detection
 export function detectAnomaliesIQR(
   data: number[],
-  sensitivity: number = 2.0  // Increased from 1.5 to 2.0 for better accuracy
+  sensitivity = 2.0 // Increased from 1.5 to 2.0 for better accuracy
 ): AnomalyResult[] {
   if (data.length < 4) {
     return [];
@@ -81,7 +81,7 @@ export function detectAnomaliesIQR(
 // ML-based anomaly detection using TensorFlow.js
 export async function detectAnomaliesML(
   data: number[],
-  sensitivity: number = 0.1
+  sensitivity = 0.1
 ): Promise<AnomalyResult[]> {
   if (data.length < 5) {
     return [];
@@ -143,7 +143,7 @@ export async function detectAnomaliesML(
 // Advanced ML-based trend prediction using TensorFlow.js
 export async function predictTrend(
   data: number[],
-  steps: number = 10
+  steps = 10
 ): Promise<TrendPrediction[]> {
   if (data.length < 5) {
     return simpleLinearPrediction(data, steps);
@@ -259,7 +259,9 @@ export async function predictTrend(
 
 // Helper function to calculate slope of data
 function calculateSlope(data: number[]): number {
-  if (data.length < 2) return 0;
+  if (data.length < 2) {
+    return 0;
+  }
   
   const n = data.length;
   const sumX = (n * (n - 1)) / 2;
@@ -268,7 +270,9 @@ function calculateSlope(data: number[]): number {
   const sumX2 = (n * (n - 1) * (2 * n - 1)) / 6;
   
   const denominator = n * sumX2 - sumX * sumX;
-  if (Math.abs(denominator) < 0.0001) return 0;
+  if (Math.abs(denominator) < 0.0001) {
+    return 0;
+  }
   
   return (n * sumXY - sumX * sumY) / denominator;
 }

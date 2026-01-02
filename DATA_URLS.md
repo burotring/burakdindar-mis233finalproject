@@ -19,6 +19,9 @@ Base URL: `http://localhost:8080`
 
 - `http://localhost:8080/server-cpu.csv`
 - `http://localhost:8080/stock-prices.csv`
+- `http://localhost:8080/zscore-many-anomalies.csv`
+- `http://localhost:8080/iqr-many-anomalies.csv`
+- `http://localhost:8080/ml-many-anomalies.csv`
 - `http://localhost:8080/zscore-anomaly-1.csv`
 - `http://localhost:8080/zscore-extreme.csv`
 

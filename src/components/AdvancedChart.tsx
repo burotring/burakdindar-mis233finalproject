@@ -401,11 +401,9 @@ export const AdvancedChart: React.FC<Props> = ({
     [
       showLegend,
       enableTooltips,
-      primaryColor,
       enableAnimations,
       animationDuration,
       isScatter,
-      chartType,
     ]
   );
 
